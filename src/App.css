@@ -38,14 +38,36 @@
   }
 }
 
-/* .create-box {
-  display: flex;
-  flex-grow: 4;
+.create-box {
+  display: block;
 }
 .create-form {
 
-} */
+}
 .list-box {
   display: block;
   
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  
+}
+button,
+input {
+  margin: 10px;
+}
+.kvc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
 }
