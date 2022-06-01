@@ -1,5 +1,5 @@
-import App from '../App';
-function getRegCode(key) {
+
+function getRegCode(code) {
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
 
@@ -7,7 +7,6 @@ function getRegCode(key) {
         result += characters.charAt(Math.floor(Math.random() * 
    characters.length));
      }
-     localStorage.setItem(key, result);
      return result;
 }
 
