@@ -134,6 +134,7 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 $colorred: crimson;
 .red-button {
@@ -145,4 +146,4 @@ $colorred: crimson;
 &:before {
   background-color: darken($colorred, 15%);
 }
-}  
+} 
