@@ -1,5 +1,5 @@
 
-function getRegCode(code) {
+function getRegCode() {
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
 

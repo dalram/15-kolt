@@ -2,22 +2,33 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 import Create from './Components/Create';
 import List from './Components/List';
-import getRegCode from './Functions/getRegCode';
-import { create } from './Functions/localStorage';
+// import getRegCode from './Functions/getRegCode';
+import { create, read } from './Functions/localStorage';
 
 
 function App() {
   const [createData, setCreateData] = useState(null);
-  
+  const [scooters, setScooters] = useState(null);
+  const [lastUpdate, setLastUpdate] = useState(Date.now());
+  // sukuriam data masyva localeStorage spausdami Add Scooter button
   useEffect(() => {
     if (null === createData) {
       return;
     }
     create(createData);
+    setLastUpdate(Date.now());
 
 
   }, [createData])
-  
+
+  // perduodam localStorage masyva su funkcija read naudodami UseEffect i setScooters kurios pagalba veliau ismapinam si masyva i Scooters List`a. Cia yra Read use effectas.
+   useEffect(() =>{
+      setScooters(read());
+
+   }, [lastUpdate]); 
+
+ 
+
   return (
     <div className="App">
       <h1>Kolt scooters administration app</h1>
@@ -41,7 +52,7 @@ function App() {
           </div> */}
         </div>
           <div className='list-box'>
-            <List></List>
+            <List scooters={scooters}></List>
         </div>
       </div>
       {/* Modal langas turi buti atvaizduojamas paspaudus 'Redaguoti' ant paspirtuko. */}
@@ -50,3 +61,6 @@ function App() {
 }
 
 export default App;
+
+
+// https://docs.google.com/document/d/18UPY3gFN-1xZ0okWMkFs8h2jESfgJDXKQ3-viMXBeS0/edit

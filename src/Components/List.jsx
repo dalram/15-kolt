@@ -1,6 +1,6 @@
 import Item from "./Item";
 
-function List() {
+function List({scooters}) {
 
     
 
@@ -13,7 +13,7 @@ function List() {
               <div className="item-body">
                 <ul className="items-group">
                   {
-                      <Item></Item>
+                      scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id}></Item>)
                   }
                   
                 </ul>

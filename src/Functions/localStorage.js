@@ -14,3 +14,11 @@ export function create(obj) {
     data = JSON.stringify(data);
     localStorage.setItem(key, data);
 }
+export function read() {
+    let data = localStorage.getItem(key);
+    if (data === null) {
+        data = JSON.stringify([]);
+    }
+    data = JSON.parse(data);
+    return data;
+}
