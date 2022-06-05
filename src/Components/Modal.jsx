@@ -10,7 +10,7 @@ function Modal({setEditData, modalData, setModalData}) {
         return null;
     }
     const handleEdit = () => {
-        
+
     }
     return (
         <>
@@ -20,10 +20,35 @@ function Modal({setEditData, modalData, setModalData}) {
                 <button onClick={() => setModalData(null)}>X</button>
                 </div>
                 <div className="title">
-                    <h2>Scooters regCode Editor</h2>
+                    <h2>Scooters {modalData.regCode} Editor</h2>
                 </div>
-                <div className="modalForm"></div>
-                <form>Koregavimo forma</form>
+                <div className="modalForm">
+                    <form>
+                        <div className="formGroup">
+                            <small>Scooter registration code</small>
+                            <input type="text" value={modalData.regCode} onChange={e => modalData.regCode}/>
+                        </div>
+                        <div className="formGroup">
+                        <small>Is scooter busy</small>
+                        <input type="checkbox" />
+                        </div>
+                        <div className="formGroup">
+                        <small>Last time used</small>
+                        <input type="datetime-local" />
+                        </div>
+                        <div className="formGroup">
+                        <small>Scooters mileages</small>
+                        <input type="text" />
+                        </div>
+                        <div className="formGroup">
+                        <small>Traveled distance today</small>
+                        <input type="text" />
+                        </div>
+
+                        {/* visus inputus reik padaryt kontroliuojamus! */}
+                    </form>
+                </div>
+                
                 <div className="modalButtons">
                     <button onClick={handleEdit}>Save changes</button>
                     <button className="red-button" onClick={() => setModalData(null)}>Close</button>

@@ -167,7 +167,7 @@ $colorred: crimson;
 
 .modalContainer {
   width: 500px;
-  height: 500px;
+  // height: 500px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -179,7 +179,7 @@ $colorred: crimson;
 .modalContainer .title {
   display: inline-block;
   text-align: center;
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .titleCloseBtn {
@@ -190,19 +190,24 @@ $colorred: crimson;
 .titleCloseBtn button {
   background-color: #fff;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.modalContainer .body {
-  flex: 50%;
+.modalContainer .modalForm {
+  // flex: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
+  // align-items: center;
+  font-size: 1.5rem;
   text-align: center;
+  flex-wrap: wrap;
 }
-
+.modalForm .formGroup {
+  display: flex;
+  align-items: center;
+}
 .modalContainer .footer {
   flex: 20%;
   display: flex;
@@ -211,9 +216,10 @@ $colorred: crimson;
 }
 
 .modalButtons button {
+  
   width: 150px;
   height: 45px;
-  margin: 10px;
+  margin: 30px 20px 0px 20px;
   // border: none;
   background-color: cornflowerblue;
   color: white;
