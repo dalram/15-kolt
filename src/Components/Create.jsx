@@ -14,7 +14,7 @@ function Create({setCreateData}) {
          <div className='create-form'>
             <span>New scooter registration code</span>
             <input type="text" value={regCode} onChange={e => setRegCode(e.target.value)}/>
-            <button className='addButton' onClick={addScooter}>Add scooter</button>
+            <button className='btn addButton' onClick={addScooter}>Add scooter</button>
           </div>
         </>
     );

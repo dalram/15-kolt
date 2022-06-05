@@ -1,6 +1,6 @@
 import Item from "./Item";
 
-function List({scooters, setDeleteData}) {
+function List({scooters, setDeleteData, setModalData}) {
 
     
 
@@ -13,7 +13,7 @@ function List({scooters, setDeleteData}) {
               <div className="item-body">
                 <ul className="items-group">
                   {
-                      scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData}></Item>)
+                      scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>)
                   }
                   
                 </ul>

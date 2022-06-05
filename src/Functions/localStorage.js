@@ -33,3 +33,14 @@ export function remove({id}) {
     data = JSON.stringify(data);
     localStorage.setItem(key, data);
 }
+
+export function edit(obj) {
+    let data = localStorage.getItem(key);
+    if (data === null) {
+        data = JSON.stringify([]);
+    }
+    data = JSON.parse(data);
+    data = data.map(oldObject => oldObject.id !== obj.id ? oldObject : obj);
+    data = JSON.stringify(data);
+    localStorage.setItem(key, data);
+}

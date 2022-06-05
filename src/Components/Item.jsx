@@ -1,6 +1,10 @@
-function Item({scooter, setDeleteData}) {
+function Item({scooter, setDeleteData, setModalData}) {
     const handleDelete = () => {
         setDeleteData(scooter);
+    }
+
+    const handleEdit = () => {
+        setModalData(scooter);
     }
     return (
         <>
@@ -13,8 +17,8 @@ function Item({scooter, setDeleteData}) {
                        <p>Total ride distance: {scooter.totalRideKilometres}</p>
                     </div>
                     <div className='item-buttons'>
-                    <button>Edit</button>
-                    <button className='red-button' onClick={handleDelete}>Delete</button>
+                    <button className="btn" onClick={handleEdit}>Edit</button>
+                    <button className='btn red-button' onClick={handleDelete}>Delete</button>
                     </div>
                 </div>
             </li>

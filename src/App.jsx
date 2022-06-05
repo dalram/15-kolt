@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 import Create from './Components/Create';
 import List from './Components/List';
+import Modal from './Components/Modal';
 // import getRegCode from './Functions/getRegCode';
-import { create, read, remove } from './Functions/localStorage';
+import { create, edit, read, remove } from './Functions/localStorage';
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   const [scooters, setScooters] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [deleteData, setDeleteData] = useState(null);
+  const [modalData, setModalData] = useState(null);
+  const [editData, setEditData] = useState(null);
   // sukuriam data masyva localeStorage spausdami Add Scooter button
   useEffect(() => {
     if (null === createData) {
@@ -39,6 +42,16 @@ useEffect(() =>{
 
 }, [deleteData]);
 
+// Modalo funkcionalumas
+useEffect(() =>{
+  if (editData === null) {
+    return;
+  }
+  edit(editData);
+  setLastUpdate(Date.now());
+
+}, [editData]);
+
   return (
     <div className="App">
       <h1>Kolt scooters administration app</h1>
@@ -62,11 +75,11 @@ useEffect(() =>{
           </div> */}
         </div>
           <div className='list-box'>
-            <List scooters={scooters} setDeleteData={setDeleteData}></List>
+            <List scooters={scooters} setDeleteData={setDeleteData} setModalData={setModalData}></List>
         </div>
       </div>
       {/* Modal langas turi buti atvaizduojamas paspaudus 'Redaguoti' ant paspirtuko. */}
-     
+      <Modal setEditData={setEditData} modalData={modalData} setModalData={setModalData}></Modal>
     </div>
   );
 }
