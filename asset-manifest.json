@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dalram.github.io/15-kolt/static/css/main.48c0dc8d.css",
+    "main.js": "/dalram.github.io/15-kolt/static/js/main.4fbd26e8.js",
+    "static/js/787.25b88bea.chunk.js": "/dalram.github.io/15-kolt/static/js/787.25b88bea.chunk.js",
+    "index.html": "/dalram.github.io/15-kolt/index.html",
+    "main.48c0dc8d.css.map": "/dalram.github.io/15-kolt/static/css/main.48c0dc8d.css.map",
+    "main.4fbd26e8.js.map": "/dalram.github.io/15-kolt/static/js/main.4fbd26e8.js.map",
+    "787.25b88bea.chunk.js.map": "/dalram.github.io/15-kolt/static/js/787.25b88bea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48c0dc8d.css",
+    "static/js/main.4fbd26e8.js"
+  ]
+}
