@@ -4,7 +4,18 @@ function Modal({setEditData, modalData, setModalData}) {
 
     const [isBusy, setIsBusy] = useState(0);
     const [lastUseTime, setLastUseTime] = useState('');
-    const [distance, setDistance] = useState("");
+    const [distance, setDistance] = useState(0);
+    
+    
+    
+    const handleEdit = () => {
+        const data = {id: modalData.id,regCode: modalData.regCode, isBusy: isBusy ? 'True' : 'False', lastUseTime, totalRideKilometres: (+(modalData.totalRideKilometres) + +(distance)).toFixed(2)}
+        setEditData(data);
+        setIsBusy(0);
+        setLastUseTime('');
+        setDistance(0);
+        setModalData(null);
+    }
     useEffect(() => {
         if (null === modalData) {
             return;
@@ -13,15 +24,6 @@ function Modal({setEditData, modalData, setModalData}) {
         setLastUseTime(modalData.lastUseTime);
         setDistance(modalData.totalRideKilometres);
     }, [modalData]);
-    
-    const handleEdit = () => {
-        const data = {id: modalData.id, isBusy, lastUseTime, totalRideKilometres: modalData.totalRideKilometres + distance}
-        setEditData(data);
-        setModalData(null);
-        setIsBusy(0);
-        setLastUseTime('');
-        setDistance('')
-    }
     if (null === modalData) {
         return null;
     }
@@ -44,24 +46,23 @@ function Modal({setEditData, modalData, setModalData}) {
                         </div>
                         <div className="formGroup">
                         <small>Is scooter busy</small>
-                        <input type="checkbox" value={isBusy} onChange={e => isBusy === 0 ? setIsBusy('true') : setIsBusy('false')
-                        }/>
+                        <input type="checkbox" checked={isBusy} onChange={e => setIsBusy(isBusy ? false: true)}/>
                         </div>
                         <div className="formGroup">
                         <small>Last time used</small>
-                        <input type="datetime-local" value={modalData.lastTimeUsed} onChange={e => setLastUseTime(e.target.value)}/>
+                        <input type="datetime-local" value={modalData.lastUseTime} onChange={e => modalData.lastUseTime}/>
                         </div>
                         <div className="formGroup">
                         <small>Update last used time</small>
                         <input type="datetime-local" value={lastUseTime} onChange={e => setLastUseTime(e.target.value)}/>
                         </div>
                         <div className="formGroup">
-                        <small>Total ride kilometers</small>
+                        <small>Total kilometres made</small>
                         <input type="number" value={modalData.totalRideKilometres} onChange={e => modalData.totalRideKilometres}/>
                         </div>
                         <div className="formGroup">
                         <small>Traveled distance today</small>
-                        <input type="number" value={distance} onChange={e => setDistance(e.target.value)}/>
+                        <input type="number" value={distance} min={0} onChange={e => setDistance(e.target.value < 0 ? 0: e.target.value)}/>
                         </div>
 
                         {/* visus inputus reik padaryt kontroliuojamus! */}

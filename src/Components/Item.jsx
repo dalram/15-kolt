@@ -13,8 +13,8 @@ function Item({scooter, setDeleteData, setModalData}) {
                     <div className='item-info'>
                        <p>Reg code: {scooter.regCode}</p> 
                        <p>Is busy: {scooter.isBusy}</p>
-                       <p>Last use date: {scooter.lastTimeUsed}</p>
-                       <p>Total ride distance: {scooter.totalRideKilometres}</p>
+                       <p>Last use date: {scooter.lastUseTime}</p>
+                       <p>Total ride distance in km: {scooter.totalRideKilometres}</p>
                     </div>
                     <div className='item-buttons'>
                     <button className="btn" onClick={handleEdit}>Edit</button>
