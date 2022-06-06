@@ -5,7 +5,7 @@ function Create({setCreateData}) {
     const [regCode, setRegCode] = useState(getRegCode());
     
     const addScooter = () => {
-        const obj = {regCode, isBusy: false, lastUseTime: 'Still not used', totalRideKilometres: 0}
+        const obj = {regCode, isBusy: 0, lastUseTime: 'Still not used', totalRideKilometres: 0}
         setCreateData(obj);
         setRegCode(getRegCode());
   }

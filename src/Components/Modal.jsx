@@ -9,9 +9,9 @@ function Modal({setEditData, modalData, setModalData}) {
     
     
     const handleEdit = () => {
-        const data = {id: modalData.id,regCode: modalData.regCode, isBusy: isBusy ? 'True' : 'False', lastUseTime, totalRideKilometres: (+(modalData.totalRideKilometres) + +(distance)).toFixed(2)}
+        const data = {id: modalData.id,regCode: modalData.regCode, isBusy: isBusy ? 'true' : false, lastUseTime, totalRideKilometres: (+(modalData.totalRideKilometres) + +(distance)).toFixed(2)}
         setEditData(data);
-        setIsBusy(0);
+        // setIsBusy(0);
         setLastUseTime('');
         setDistance(0);
         setModalData(null);
@@ -22,12 +22,12 @@ function Modal({setEditData, modalData, setModalData}) {
         }
         setIsBusy(modalData.isBusy);
         setLastUseTime(modalData.lastUseTime);
-        setDistance(modalData.totalRideKilometres);
+        setDistance('');
     }, [modalData]);
     if (null === modalData) {
         return null;
     }
-
+        
     return (
         <>
         <div className="modalBackground">
@@ -45,8 +45,8 @@ function Modal({setEditData, modalData, setModalData}) {
                             <input type="text" value={modalData.regCode} onChange={e => modalData.regCode}/>
                         </div>
                         <div className="formGroup">
-                        <small>Is scooter busy</small>
-                        <input type="checkbox" checked={isBusy} onChange={e => setIsBusy(isBusy ? false: true)}/>
+                        <small>Check if scooter is busy</small>
+                        <input type="checkbox" checked={isBusy ? 1 : 0} onChange={e => setIsBusy(isBusy ? 0 : 1)}/>
                         </div>
                         <div className="formGroup">
                         <small>Last time used</small>
