@@ -11,8 +11,9 @@ Site published at:
 ## Project features
 
 -   Github pages
--   React hooks
 -   content rendering with React
+-   React hooks
+-   React forms
 -   Basic SCSS styling
 
 
