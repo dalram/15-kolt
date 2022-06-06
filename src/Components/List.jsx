@@ -8,7 +8,7 @@ function List({scooters, setDeleteData, setModalData}) {
     return (
         <>
             <div className='items'>
-                <ScootersData scooters={scooters}></ScootersData>
+                {/* <ScootersData scooters={scooters}></ScootersData> */}
               <div className="list-header">
                 <h2>Scooters List</h2>
               </div>

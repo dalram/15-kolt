@@ -3,6 +3,7 @@ import './App.scss';
 import Create from './Components/Create';
 import List from './Components/List';
 import Modal from './Components/Modal';
+import ScootersData from './Components/ScootersData';
 // import getRegCode from './Functions/getRegCode';
 import { create, edit, read, remove } from './Functions/localStorage';
 
@@ -61,6 +62,7 @@ useEffect(() =>{
             <h2>Create new scooter</h2>
           </div>
           <Create setCreateData={setCreateData}></Create>
+          <ScootersData scooters={scooters}/>
           {/* <div className='create-form'>
             <span>Scooters registration code</span>
             <input type="text" value={getRegCode()} onChange={e => setRegCode(e.target.value)}/>
@@ -74,7 +76,9 @@ useEffect(() =>{
             <button className='addButton' onClick={addScooter}>Add scooter</button>
           </div> */}
         </div>
+      
           <div className='list-box'>
+            
             <List scooters={scooters} setDeleteData={setDeleteData} setModalData={setModalData}></List>
         </div>
       </div>

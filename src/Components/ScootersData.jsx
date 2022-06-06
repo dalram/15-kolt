@@ -6,15 +6,21 @@ function ScootersData({scooters}) {
                 <ul>
                     <li>
                     <div className='item'>
-                    <div className='item-info'>
+                        <div className='item-info'>
                       <p>Count of scooters: {
                         scooters === null ? null : scooters.length
                         }</p>
+                        </div>
+                    </div>
+                    </li>
+                    <li>
+                    <div className='item'>
+                        <div className='item-info'>
                       <p>Count of kilometres traveled: {
                       scooters === null ? null : scooters.reduce((total, item) => (total + (+(+item.totalRideKilometres).toPrecision(4))), 0) 
                       }</p>
                       
-                    </div>
+                        </div>
                     </div>
                     
                     </li>
