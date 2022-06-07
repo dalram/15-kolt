@@ -15,7 +15,7 @@ function List({scooters, setDeleteData, setModalData, sortType}) {
               <div className="item-body">
                 <ul className="items-group">
                   {
-                      sortType === '1' ? scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null
+                      sortType === '1' ? scooters === null ? null : scooters.sort((a, b) => a.id - b.id).map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null
                   }
                   {
                       sortType === '2' ? scooters === null ? null : scooters.sort((a, b) => a.totalRideKilometres - b.totalRideKilometres).map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null

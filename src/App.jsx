@@ -31,7 +31,6 @@ function App() {
   // perduodam localStorage masyva su funkcija read naudodami UseEffect i setScooters kurios pagalba veliau ismapinam si masyva i Scooters List`a. Cia yra Read use effectas.
   useEffect(() =>{
       setScooters(read());
-
    }, [lastUpdate]); 
 
 //  delete useEffect

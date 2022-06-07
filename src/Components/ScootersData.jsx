@@ -17,7 +17,7 @@ function ScootersData({scooters}) {
                     <div className='item'>
                         <div className='item-info'>
                       <p>Count of kilometres traveled: {
-                      scooters === null ? null : scooters.reduce((total, item) => (total + (+(+item.totalRideKilometres).toPrecision(4))), 0) 
+                      scooters === null ? null : scooters.reduce((total, item) => (total + +(+item.totalRideKilometres).toPrecision(4)), 0)   
                       }</p>
                       
                         </div>
@@ -32,4 +32,6 @@ function ScootersData({scooters}) {
 
 export default ScootersData;
 
-// scooters === null ? null : scooters.reduce((total, item) => (total + +(+item.totalRideKilometres).toPrecision(4)), 0) 
+// scooters === null ? null : scooters.reduce((total, item) => (total + +(+item.totalRideKilometres).toPrecision(4)), 0) // veikia tikrai!!!!
+
+
