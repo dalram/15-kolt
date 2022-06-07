@@ -1,7 +1,7 @@
 import Item from "./Item";
 // import ScootersData from "./ScootersData";
 
-function List({scooters, setDeleteData, setModalData}) {
+function List({scooters, setDeleteData, setModalData, sortType}) {
 
     
 
@@ -15,7 +15,13 @@ function List({scooters, setDeleteData, setModalData}) {
               <div className="item-body">
                 <ul className="items-group">
                   {
-                      scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>)
+                      sortType === '1' ? scooters === null ? null : scooters.map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null
+                  }
+                  {
+                      sortType === '2' ? scooters === null ? null : scooters.sort((a, b) => a.totalRideKilometres - b.totalRideKilometres).map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null
+                  }
+                  {
+                      sortType === '3' ? scooters === null ? null : scooters.sort((a, b) => a.lastUseTime.localeCompare(b.lastUseTime)).map(scooter => <Item scooter={scooter} key={scooter.id} setDeleteData={setDeleteData} setModalData={setModalData}></Item>) : null
                   }
                   
                 </ul>

@@ -4,6 +4,7 @@ import Create from './Components/Create';
 import List from './Components/List';
 import Modal from './Components/Modal';
 import ScootersData from './Components/ScootersData';
+import Sorting from './Components/Sorting';
 // import getRegCode from './Functions/getRegCode';
 import { create, edit, read, remove } from './Functions/localStorage';
 
@@ -15,6 +16,7 @@ function App() {
   const [deleteData, setDeleteData] = useState(null);
   const [modalData, setModalData] = useState(null);
   const [editData, setEditData] = useState(null);
+  const [sortType, setSortType] = useState('1');
   // sukuriam data masyva localeStorage spausdami Add Scooter button
   useEffect(() => {
     if (null === createData) {
@@ -63,6 +65,7 @@ useEffect(() =>{
           </div>
           <Create setCreateData={setCreateData}></Create>
           <ScootersData scooters={scooters}/>
+          <Sorting sortType={sortType} setSortType={setSortType}></Sorting>
           {/* <div className='create-form'>
             <span>Scooters registration code</span>
             <input type="text" value={getRegCode()} onChange={e => setRegCode(e.target.value)}/>
@@ -79,7 +82,7 @@ useEffect(() =>{
       
           <div className='list-box'>
             
-            <List scooters={scooters} setDeleteData={setDeleteData} setModalData={setModalData}></List>
+            <List scooters={scooters} setDeleteData={setDeleteData} setModalData={setModalData} sortType={sortType}></List>
         </div>
       </div>
       {/* Modal langas turi buti atvaizduojamas paspaudus 'Redaguoti' ant paspirtuko. */}
