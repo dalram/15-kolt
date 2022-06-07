@@ -1,5 +1,5 @@
 import Item from "./Item";
-import ScootersData from "./ScootersData";
+// import ScootersData from "./ScootersData";
 
 function List({scooters, setDeleteData, setModalData}) {
 
