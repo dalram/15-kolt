@@ -1,7 +1,17 @@
+body {
+  // background-image: url('https://image.shutterstock.com/image-photo/electric-scooter-on-white-concrete-260nw-1134117977.jpg');
+  background: url('https://i.pinimg.com/originals/07/00/e6/0700e64e50192aaee61f648e26f0699f.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .App {
+  
   text-align: center;
   /* display: flex; */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: 'Times New Roman', Times, serif
+  
 }
 
 .App-logo {
