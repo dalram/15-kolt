@@ -6,7 +6,7 @@ import Modal from './Components/Modal';
 import ScootersData from './Components/ScootersData';
 import Sorting from './Components/Sorting';
 // import getRegCode from './Functions/getRegCode';
-import { create, edit, read, remove } from './Functions/localStorage';
+import { create, edit, read, remove} from './Functions/localStorage';
 
 
 function App() {
@@ -17,6 +17,10 @@ function App() {
   const [modalData, setModalData] = useState(null);
   const [editData, setEditData] = useState(null);
   const [sortType, setSortType] = useState('1');
+  useEffect(() => {
+    // scootersSort(localStorage.getItem('scooters-sort'));
+    localStorage.getItem('scooters-sort') ? setSortType(localStorage.getItem('scooters-sort')): setSortType('1');
+  }, [])
   // sukuriam data masyva localeStorage spausdami Add Scooter button
   useEffect(() => {
     if (null === createData) {
@@ -53,6 +57,7 @@ useEffect(() =>{
   setLastUpdate(Date.now());
 
 }, [editData]);
+
 
   return (
     <div className="App">

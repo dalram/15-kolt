@@ -1,3 +1,4 @@
+
 import getId from "./getId";
 
 
@@ -43,4 +44,15 @@ export function edit(obj) {
     data = data.map(oldObject => oldObject.id !== obj.id ? oldObject : obj);
     data = JSON.stringify(data);
     localStorage.setItem(key, data);
+}
+
+export function scootersSort(value) {
+    let data = localStorage.getItem('scooters-sort');
+    if (data === null) {
+        data = JSON.stringify('1');
+    }
+    data = JSON.parse(data);
+    data = JSON.stringify(data);
+    localStorage.setItem('scooters-sort', value);
+    return data;
 }
