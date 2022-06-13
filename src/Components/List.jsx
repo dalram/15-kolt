@@ -14,7 +14,7 @@ function List({ scooters, setDeleteData, setModalData, sortType }) {
             {sortType === "1"
               ? scooters === null
                 ? null
-                : scooters
+                : [...scooters]
                     .sort((a, b) => a.id - b.id)
                     .map((scooter) => (
                       <Item
@@ -28,7 +28,7 @@ function List({ scooters, setDeleteData, setModalData, sortType }) {
             {sortType === "2"
               ? scooters === null
                 ? null
-                : scooters
+                : [...scooters]
                     .sort(
                       (a, b) => a.totalRideKilometres - b.totalRideKilometres
                     )
@@ -44,7 +44,7 @@ function List({ scooters, setDeleteData, setModalData, sortType }) {
             {sortType === "3"
               ? scooters === null
                 ? null
-                : scooters
+                : [...scooters]
                     .sort((a, b) => a.lastUseTime.localeCompare(b.lastUseTime))
                     .map((scooter) => (
                       <Item
