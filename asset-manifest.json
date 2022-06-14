@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dalram.github.io/15-kolt/static/css/main.48c0dc8d.css",
-    "main.js": "/dalram.github.io/15-kolt/static/js/main.a6623020.js",
-    "static/js/787.25b88bea.chunk.js": "/dalram.github.io/15-kolt/static/js/787.25b88bea.chunk.js",
-    "index.html": "/dalram.github.io/15-kolt/index.html",
-    "main.48c0dc8d.css.map": "/dalram.github.io/15-kolt/static/css/main.48c0dc8d.css.map",
-    "main.a6623020.js.map": "/dalram.github.io/15-kolt/static/js/main.a6623020.js.map",
-    "787.25b88bea.chunk.js.map": "/dalram.github.io/15-kolt/static/js/787.25b88bea.chunk.js.map"
+    "main.css": "/15-kolt/static/css/main.5964bfc8.css",
+    "main.js": "/15-kolt/static/js/main.d96f2faa.js",
+    "static/js/787.25b88bea.chunk.js": "/15-kolt/static/js/787.25b88bea.chunk.js",
+    "index.html": "/15-kolt/index.html",
+    "main.5964bfc8.css.map": "/15-kolt/static/css/main.5964bfc8.css.map",
+    "main.d96f2faa.js.map": "/15-kolt/static/js/main.d96f2faa.js.map",
+    "787.25b88bea.chunk.js.map": "/15-kolt/static/js/787.25b88bea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48c0dc8d.css",
-    "static/js/main.a6623020.js"
+    "static/css/main.5964bfc8.css",
+    "static/js/main.d96f2faa.js"
   ]
 }
