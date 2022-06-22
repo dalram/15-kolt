@@ -18,8 +18,9 @@ Site published at:
 -   content rendering with React
 -   React hooks
 -   React forms
--   Basic SCSS styling
 -   LocalStorage
+-   Basic SCSS styling
+
 
 
 ## Authors
