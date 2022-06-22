@@ -19,6 +19,7 @@ Site published at:
 -   React hooks
 -   React forms
 -   Basic SCSS styling
+-   Localstorage
 
 
 ## Authors
